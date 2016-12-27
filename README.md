@@ -1,7 +1,7 @@
 # MpiLineDetection
 
 CMPE300 PROGRAMMING PROJECT
-2016400372 MEHMET SEFA BALIK
+MEHMET SEFA BALIK
 
 Smoothing and line detecting algorithm using
 C programming language with the help of MPI (Message Passing Interface) libraries.
@@ -17,14 +17,23 @@ Introduction
 
 The goal of this project is to detect lines in a grayscale image. The program :
 •	Takes 200x200 grayscale image array(should be given as 1. Command line argument)
+
 •	Master processor reads and scatters divided arrays to the slaves 
+
 •	Slaves store divided arrays
+
 •	Slaves communicate  with each other, sends and receives the boundary rows
+
 •	When communication is done, Slaves smooth the arrays in parallel
+
 •	When smoothing is done, slaves again communicate with each other, sends and receives the boundary smoothed rows
+
 •	After communication is done, slaves do the convolution in parallel to detect horizontal, vertical and oblique lines, and treshold with the given number(as 3. Command line argument)
+
 •	After convolution is done, slaves gather convolved arrays in Master processor.
+
 •	After gathering, Master writes the convolved array in output file(should be given as 2. Command line argument)
+
 
 
 
